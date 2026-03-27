@@ -54,6 +54,7 @@ namespace Punto4
                 }
             }
             Console.Write(suma);
+            Console.ReadKey();
         }
     }
 }
