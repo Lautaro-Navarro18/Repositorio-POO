@@ -44,6 +44,7 @@ namespace Punto4
             }
             promedioN = promedioN / 15;
             Console.Write("\n" + promedioN);
+            Console.ReadKey();
         }
     }
 }
