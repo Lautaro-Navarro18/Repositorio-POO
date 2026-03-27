@@ -29,6 +29,7 @@ namespace Punto1
                 Console.WriteLine("Producto: " + (num1 * num2));
                 Console.WriteLine("División: " + (num1 / num2));
             }
+            Console.ReadKey();
         }
     }
 }
