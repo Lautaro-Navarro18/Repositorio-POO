@@ -42,6 +42,7 @@ namespace Punto4
                     Console.Write(num3);
                 }
             }
+            Console.ReadKey();
         }
     }
 }
