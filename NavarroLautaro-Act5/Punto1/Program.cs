@@ -24,6 +24,7 @@ namespace Punto1
                     Console.Write(multiplicar + "\n");
                 }
             }
+            Console.ReadKey();
         }
     }
 }
