@@ -42,6 +42,7 @@ namespace Punto1
             Console.Write("La cantidad que combran mas de 300 son: " + mas + "\n");
             Console.Write("La cantidad que cobran menos de 300 son: " + menos + "\n");
             Console.Write("Lo que gasta la empresa es: " + suma);
+            Console.ReadKey();
         }
     }
 }
