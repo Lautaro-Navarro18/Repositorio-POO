@@ -54,6 +54,7 @@ namespace Punto2
                 Console.Write("\n");
             }
             Console.Write("La cantidad de equilateros es: " + equi + ", la cantidad de isosceles es: " + iso + " y la cantidad de escaleno es: " + esca);
+            Console.ReadKey();
         }
     }
 }
