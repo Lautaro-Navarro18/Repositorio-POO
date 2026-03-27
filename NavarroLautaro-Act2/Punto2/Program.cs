@@ -32,6 +32,7 @@ namespace Punto2
             {
                 Console.WriteLine("Promocionado");
             }
+            Console.ReadKey();
         }
     }
 }
