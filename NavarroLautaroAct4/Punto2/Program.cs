@@ -19,6 +19,7 @@ namespace Punto2
                 Console.WriteLine(t = t + 11);
                 x++;
             }
+            Console.ReadKey();
         }
     }
 }
