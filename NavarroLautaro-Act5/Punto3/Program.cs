@@ -41,6 +41,7 @@ namespace Punto3
             Console.Write("Los valores positivos son: " + posi + "\n");
             Console.Write("La cantidad multiplo de 15 es: " + m15 + "\n");
             Console.Write("La suma/valor acumulado de todos los numeros pares es: " + suma);
+            Console.ReadKey();
         }
     }
 }
