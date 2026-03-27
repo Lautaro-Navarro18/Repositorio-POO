@@ -33,6 +33,7 @@ namespace Punto3
                     Console.WriteLine("Tiene dos dígitos");
                 }
             }
+            Console.ReadKey();
         }
     }
 }
