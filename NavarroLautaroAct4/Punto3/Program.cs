@@ -42,6 +42,7 @@ namespace Punto3
                     Console.Write("Es menor a 0 (" + suma + ")");
                 }
             }
+            Console.ReadKey();
         }
     }
 }
