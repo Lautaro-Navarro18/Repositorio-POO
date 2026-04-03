@@ -1,0 +1,7 @@
+C:\Users\Familia\source\repos\NavarroLautaro-Act6\Punto4\bin\Debug\Punto4.exe.config
+C:\Users\Familia\source\repos\NavarroLautaro-Act6\Punto4\bin\Debug\Punto4.exe
+C:\Users\Familia\source\repos\NavarroLautaro-Act6\Punto4\bin\Debug\Punto4.pdb
+C:\Users\Familia\source\repos\NavarroLautaro-Act6\Punto4\obj\Debug\Punto4.csproj.AssemblyReference.cache
+C:\Users\Familia\source\repos\NavarroLautaro-Act6\Punto4\obj\Debug\Punto4.csproj.CoreCompileInputs.cache
+C:\Users\Familia\source\repos\NavarroLautaro-Act6\Punto4\obj\Debug\Punto4.exe
+C:\Users\Familia\source\repos\NavarroLautaro-Act6\Punto4\obj\Debug\Punto4.pdb
