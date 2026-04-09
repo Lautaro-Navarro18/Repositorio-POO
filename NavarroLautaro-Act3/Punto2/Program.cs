@@ -20,6 +20,7 @@ namespace Punto2
             num3 = int.Parse(Console.ReadLine());
             if (num1 == num2 && num2 == num3)
             {
+                Console.WriteLine(num1 + num2);
                 Console.WriteLine(num3 * (num1 + num2));
             }
             else
