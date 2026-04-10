@@ -16,7 +16,7 @@ Cantidad de valores mayores a 50.*/
         void CargarValores()
         {
             numeros = new int[8];
-            for(int i = 0; i < 8; i++)
+            for (int i = 0; i < 8; i++)
             {
                 Console.Write("coloque los valores: ");
                 numeros[i] = int.Parse(Console.ReadLine());
@@ -25,7 +25,7 @@ Cantidad de valores mayores a 50.*/
         void ValorAcumulado()
         {
             int suma = 0;
-            for(int i = 0; i < 8; i++)
+            for (int i = 0; i < 8; i++)
             {
                 suma = suma + numeros[i];
             }
@@ -34,7 +34,7 @@ Cantidad de valores mayores a 50.*/
         void MayorQ36()
         {
             int mas = 0;
-            for(int i = 0; i < 8; i++)
+            for (int i = 0; i < 8; i++)
             {
                 if (numeros[i] > 36)
                 {

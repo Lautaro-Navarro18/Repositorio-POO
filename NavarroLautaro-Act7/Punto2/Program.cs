@@ -32,7 +32,7 @@ tercer vector del mismo tamaño. Sumar componente a componente.*/
         void Suma()
         {
             VS = new int[4];
-            for(int i = 0; i < 4; i++)
+            for (int i = 0; i < 4; i++)
             {
                 VS[i] = V1[i];
                 VS[i] = VS[i] + V2[i];            //el problema profe, de porque sumaba 20 sin motivo era porque esto: '\n' + VS[i] + '\n' lo lee como 10 + VS[i] + 10 
