@@ -1,15 +1,11 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Punto1
+namespace Punto3
 {
-    /*1. Desarrollar un programa que permita ingresar un vector de 8 elementos, e informe:
-El valor acumulado de todos los elementos del vector.
-El valor acumulado de los elementos del vector que sean mayores a 36.
-Cantidad de valores mayores a 50.*/
     internal class Valores
     {
         private int[] numeros;
@@ -31,17 +27,17 @@ Cantidad de valores mayores a 50.*/
             }
             Console.Write("El valor acumulado de los valores es: " + suma + "\n");
         }
-        void MayorQ36()
+        void Acumulado36()
         {
-            int mas = 0;
+            int suma = 0;
             for (int i = 0; i < 8; i++)
             {
                 if (numeros[i] > 36)
                 {
-                    mas++;
+                    suma = suma + numeros[i];
                 }
             }
-            Console.Write("Hay " + mas + " numeros mas grandes que 36 \n");
+            Console.Write("El valor acumulado de valores mayores a 36 es de: " + suma + "\n");
         }
         void MayorQ50()
         {
@@ -60,7 +56,7 @@ Cantidad de valores mayores a 50.*/
             Valores v = new Valores();
             v.CargarValores();
             v.ValorAcumulado();
-            v.MayorQ36();
+            v.Acumulado36();
             v.MayorQ50();
             Console.ReadKey();
         }
