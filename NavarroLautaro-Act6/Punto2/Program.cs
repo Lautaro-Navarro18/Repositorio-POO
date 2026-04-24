@@ -30,6 +30,7 @@ namespace Punto1
             cuadrado.cargarValor();
             cuadrado.perimetro();
             cuadrado.superficie();
+            Console.ReadKey();
         }
     }
 }
