@@ -60,7 +60,8 @@ namespace Punto3
         }
         void PromedioA()
         {
-            float promedio;
+            int auxA = 0;
+            float promedio, auxP = 0;
             for (int i = 0; i < nombres.Length; i++)
             {
                 promedio = 0;
@@ -69,6 +70,11 @@ namespace Punto3
                     promedio += puntajes[i][j];
                 }
                 promedio /= puntajes[i].Length;
+                if(promedio > auxP)
+                {
+                    auxP = promedio;
+                    auxA = i;
+                }
                 if (promedio >= 70)
                 {
                     Console.WriteLine("El alumno " + nombres[i] + " tiene un promedio de " + promedio + " - Aprobado");
@@ -78,24 +84,7 @@ namespace Punto3
                     Console.WriteLine("El alumno " + nombres[i] + " tiene un promedio de " + promedio + " - Reprobado");
                 }
             }
-        }
-        void PuntajeMA()
-        {
-            int auxf = 0, auxc = 0;
-            int max = 0;
-            for (int i = 0; i < puntajes.Length; i++)
-            {
-                for (int j = 0; j < puntajes[i].Length; j++)
-                {
-                    if (puntajes[i][j] > max)
-                    {
-                        max = puntajes[i][j];
-                        auxf = i;
-                        auxc = j;
-                    }
-                }
-            }
-            Console.WriteLine("El puntaje mas alto fue de " + nombres[auxf] + " en el plato " + (auxc + 1) + " con " + max + " puntos");
+            Console.WriteLine("El alumno " + nombres[auxA] + " tuvo el promedio mas alto con: " + auxP);
         }
         static void Main(string[] args)
         {
@@ -104,7 +93,6 @@ namespace Punto3
             G.CargarP();
             G.MostrarL();
             G.PromedioA();
-            G.PuntajeMA();
             Console.ReadKey();
         }
     }
