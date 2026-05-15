@@ -27,28 +27,37 @@ namespace Punto2
             asientos[2] = new int[8];
             asientos[3] = new int[12];
         }
-        void VentaDeEntradas()
+        void VentaE()
         {
-            int auxf = 0, auxc = 0;
-            Console.WriteLine("Ingrese la sala a la que desea ir y al asiento que quiere usar: ");
-            auxf = int.Parse(Console.ReadLine()) - 1;
-            auxc = int.Parse(Console.ReadLine()) - 1;
-            if(auxf >= 0 && auxf < 4)
+            for (int i = 0; i < asientos.Length; i++)
             {
-                if (auxc >= 0 && auxc < asientos[auxf].Length)
+                for (int j = 0; j < asientos[i].Length; j++)
                 {
-                    Console.Write("Ingrese su edad: ");
-                    asientos[auxf][auxc] = int.Parse(Console.ReadLine());
-                }
-                else
-                {
-                    Console.Write("El asiento no existe");
+                    int auxf = 0, auxc = 0;
+                    Console.WriteLine("Ingrese la sala a la que desea ir y al asiento que quiere usar: ");
+                    auxf = int.Parse(Console.ReadLine()) - 1;
+                    auxc = int.Parse(Console.ReadLine()) - 1;
+                    if (asientos[auxf][auxc]<= 0)
+                    {
+                        if (auxf >= 0 && auxf < 4)
+                        {
+                            if (auxc >= 0 && auxc < asientos[auxf].Length)
+                            {
+                                Console.Write("Ingrese su edad: ");
+                                asientos[auxf][auxc] = int.Parse(Console.ReadLine());
+                            }
+                            else
+                            {
+                                Console.Write("El asiento no existe");
+                            }
+                        }
+                        else
+                        {
+                            Console.Write("La sala no existe");
+                        }
+                    }
                 }
             }
-            else
-            {
-                Console.Write("La sala no existe");
-            }        
         }
         void ImprimirM()
         {
@@ -57,7 +66,7 @@ namespace Punto2
                 Console.WriteLine("La sala " + (i + 1));
                 for (int j = 0; j < asientos[i].Length; j++)
                 {
-                    Console.Write(asientos[i][j]);
+                    Console.Write(asientos[i][j] + " ");
                 }
                 Console.WriteLine();
             }
@@ -71,7 +80,7 @@ namespace Punto2
                 Console.Write("La sala " + (i + 1));
                 for (int j = 0; j < asientos[i].Length; j++)
                 {
-                    if (asientos[i][j] < 18  && asientos[i][j] > 0)
+                    if (asientos[i][j] < 18 && asientos[i][j] > 0)
                     {
                         M++;
                     }
@@ -82,12 +91,10 @@ namespace Punto2
         }
         void Promedio()
         {
-            float promedio;
-            int D;
+            float promedio = 0;
+            int D = 0;
             for (int i = 0; i < asientos.Length; i++)
             {
-                promedio = 0;
-                D = 0;
                 for (int j = 0; j < asientos[i].Length; j++)
                 {
                     if (asientos[i][j] > 0)
@@ -96,18 +103,18 @@ namespace Punto2
                         D++;
                     }
                 }
-                if(D > 0)
-                {
-                    promedio /= D;
-                    Console.WriteLine("El promedio de las edades de la sala " + (i+1) + " es de " + promedio);
-                }
+            }
+            if (D > 0)
+            {
+                promedio /= D;
+                Console.WriteLine("El promedio de las edades del complejo es de " + promedio);
             }
         }
         static void Main(string[] args)
         {
             Cine C = new Cine();
             C.IngresarA();
-            C.VentaDeEntradas();
+            C.VentaE();
             C.ImprimirM();
             C.BuscarM18();
             C.Promedio();
