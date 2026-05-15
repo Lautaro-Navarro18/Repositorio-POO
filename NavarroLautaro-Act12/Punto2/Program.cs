@@ -97,11 +97,8 @@ namespace Punto2
             {
                 for (int j = 0; j < asientos[i].Length; j++)
                 {
-                    if (asientos[i][j] > 0)
-                    {
-                        promedio += asientos[i][j];
-                        D++;
-                    }
+                    promedio += asientos[i][j];
+                    D++;
                 }
             }
             if (D > 0)
