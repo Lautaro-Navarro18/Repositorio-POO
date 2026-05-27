@@ -27,7 +27,7 @@ namespace Punto1
         }
         void Impuesto()
         {
-            if(sueldo > 3000)
+            if (sueldo > 3000)
             {
                 Console.Write(" Lamentamos informarle que tiene que pagar un impuesto por plata");
             }
