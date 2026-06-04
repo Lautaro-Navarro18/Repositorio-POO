@@ -75,7 +75,7 @@ namespace Punto3
             {
                 for (int j = 0; j < pesoC[i].Length; j++)
                 {
-                    if(auxM < pesoC[i][j])
+                    if (auxM < pesoC[i][j])
                     {
                         auxM = pesoC[i][j];
                         auxI = i;
@@ -87,16 +87,28 @@ namespace Punto3
         }
         void MostrarML()
         {
-            double aux = 0, aux2 = 0, aux3 = 0;
+            double auxM = 0;
+            for (int i = 0; i < pesoC[0].Length; i++)
+            {
+                auxM += pesoC[0][i];
+            }
+            double auxT = 0;
             int auxI = 0;
-            for (int i = 0; i < pesoC.Length -1; i++)
+
+            for (int i = 0; i < pesoC.Length; i++)
             {
                 for (int j = 0; j < pesoC[i].Length; j++)
                 {
-                    aux += pesoC[i][j];
+                    auxT += pesoC[i][j];
                 }
+                if (auxT < auxM)
+                {
+                    auxM = auxT;
+                    auxI = i;
+                }
+                auxT = 0;
             }
-            Console.WriteLine("La nave " + naveE[auxI].Rnombre() + " es la que nave que tiene menos carga");
+            Console.WriteLine("La nave que transporta menor peso acumulado es: " + naveE[auxI].Rnombre() + " con " + auxM + "T ");
         }
         static void Main(string[] args)
         {

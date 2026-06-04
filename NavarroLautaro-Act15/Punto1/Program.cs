@@ -33,13 +33,13 @@ namespace Punto1
             ritmoCardiaco = new int[3, 4];
             Console.Write("Ingrese el nombre del paciente: ");
             nombre = Console.ReadLine();
-            for (int f = 0; f < ritmoCardiaco.GetLength(0); f++)
+            for (int i = 0; i < ritmoCardiaco.GetLength(0); i++)
             {
-                Console.WriteLine("DIA " + (f + 1));
-                for (int c = 0; c < ritmoCardiaco.GetLength(1); c++)
+                Console.WriteLine("DIA " + (i + 1));
+                for (int j = 0; j < ritmoCardiaco.GetLength(1); j++)
                 {
-                    Console.Write("Ingrese la " + (c + 1) + "° lectura cardiaca de " + nombre + ": ");
-                    ritmoCardiaco[f, c] = int.Parse(Console.ReadLine());
+                    Console.Write("Ingrese la " + (j + 1) + "° lectura cardiaca de " + nombre + ": ");
+                    ritmoCardiaco[i, j] = int.Parse(Console.ReadLine());
                 }
             }
         }
@@ -67,15 +67,13 @@ namespace Punto1
             for (int i = 0; i < paciente.Length; i++)
             {
                 Console.WriteLine("Paciente: " + paciente[i].DatoNombre());
-
                 int[,] matriz = paciente[i].DatoRitCard();
-
-                for (int f = 0; f < matriz.GetLength(0); f++)
+                for (int j = 0; j < matriz.GetLength(0); j++)
                 {
-                    Console.WriteLine("Dia " + (f + 1) + ": ");
-                    for (int c = 0; c < matriz.GetLength(1); c++)
+                    Console.WriteLine("Dia " + (j + 1) + ": ");
+                    for (int e = 0; e < matriz.GetLength(1); e++)
                     {
-                        Console.Write(matriz[f, c] + " ");
+                        Console.Write(matriz[j, e] + " ");
                     }
                     Console.WriteLine();
                 }
@@ -89,11 +87,11 @@ namespace Punto1
                 Console.WriteLine("Paciente: " + paciente[i].DatoNombre());
                 int[,] matriz = paciente[i].DatoRitCard();
 
-                for (int f = 0; f < matriz.GetLength(0); f++)
+                for (int j = 0; j < matriz.GetLength(0); j++)
                 {
-                    for (int c = 0; c < matriz.GetLength(1); c++)
+                    for (int e = 0; e < matriz.GetLength(1); e++)
                     {
-                        promedio = promedio + matriz[f, c];
+                        promedio = promedio + matriz[j, e];
                     }
                 }
                 promedio = promedio / 12;
@@ -106,14 +104,14 @@ namespace Punto1
             {
                 int[,] matriz = paciente[i].DatoRitCard();
 
-                for (int f = 0; f < matriz.GetLength(0); f++)
+                for (int j = 0; j < matriz.GetLength(0); j++)
                 {
-                    for (int c = 0; c < matriz.GetLength(1); c++)
+                    for (int e = 0; e < matriz.GetLength(1); e++)
                     {
-                        if (matriz[f, c] > 120)
+                        if (matriz[j, e] > 120)
                         {
                             Console.WriteLine("Paciente: " + paciente[i].DatoNombre() + " presento un evento de taquicardia severa");
-                            Console.WriteLine(matriz[f, c]);
+                            Console.WriteLine(matriz[j, e]);
                         }
                     }
                 }
