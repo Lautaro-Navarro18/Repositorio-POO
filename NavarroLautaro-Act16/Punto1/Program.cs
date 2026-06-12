@@ -72,7 +72,7 @@ namespace Punto1
             Console.WriteLine("El sueldo es de " + sueldo);
         }
     }
-    internal class Prueba 
+    internal class Prueba
     {
         static void Main(string[] args)
         {
