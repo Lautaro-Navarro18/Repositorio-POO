@@ -16,72 +16,27 @@ namespace Punto4
     */
     public class Animal
     {
-        public string especie;
-        public string Respecie
+        public Animal(string especie)
         {
-            set
-            {
-                especie = value;
-            }
-            get
-            {
-                return especie;
-            }
-        }
-        public Animal()
-        {
-            Console.Write("Ingrese la especie del animal: ");
-            Respecie = Console.ReadLine();
-            Console.WriteLine("La especie es: " + Respecie + " (Animal)");
+            Console.WriteLine("Especie: " + especie + " (Clase Animal)");
         }
     }
     public class Mamifero : Animal
     {
-        string tipoAli;
-        public string RtipoAli
+        public Mamifero(string especie, string tipoAlimentacion) : base(especie)
         {
-            set
-            {
-                tipoAli = value;           /*  soluconar esto que esta mal hecho  */
-            }
-            get
-            {
-                return tipoAli;
-            }
-        }
-        public Mamifero()
-        {
-            Console.Write("Ingrese el tipo de alimentacion ");
-            RtipoAli = Console.ReadLine();
-            Console.WriteLine("El tipo de alimento es: " + RtipoAli + " (Mamifero)");
+            Console.WriteLine("Tipo de Alimentacion: " + tipoAlimentacion + " (Clase Mamifero)");
         }
     }
     public class Perro : Mamifero
     {
-        string nombre;
-        public string Rnombre
+        public Perro(string especie, string tipoAlimentacion, string nombre) : base(especie, tipoAlimentacion)
         {
-            set
-            {
-                nombre = value;
-            }
-            get
-            {
-                return nombre;
-            }
+            Console.WriteLine("Nombre del perro: " + nombre + " (Clase Perro)");
         }
-        public Perro()
-        {
-            Console.Write("Ingrese el nombre del perro: ");
-            Rnombre = Console.ReadLine();
-            Console.Write("El nombre es: " + Rnombre + " (Perro)");
-        }
-    }
-    internal class Prueva
-    {
         static void Main(string[] args)
         {
-            Perro P = new Perro();
+            Perro p = new Perro("Canis lupus", "Alimento balanceado", "Titan");
             Console.ReadKey();
         }
     }
