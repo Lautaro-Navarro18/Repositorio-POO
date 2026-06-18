@@ -36,7 +36,7 @@ namespace Punto4
         }
         static void Main(string[] args)
         {
-            Perro p = new Perro("Canis lupus", "Alimento balanceado", "Titan");
+            Perro p = new Perro("Canis lupus", "Pollo (sin hueso)", "Laika");
             Console.ReadKey();
         }
     }
