@@ -90,21 +90,47 @@ namespace Punto2
         }
         public void Ordenar()
         {
-            int auxPO = 0;
-            for (int i = 0; i < epez.Length; i++)
+            int auxPO = 0, auxNS = 0, auxI = 0;
+            string auxE;
+            for (int i = 0; i < epez.Length - 1; i++)
             {
                 for (int j = 0; j < epez.Length - 1; j++)
                 {
                     if (epez[j].RprofundiO > epez[j + 1].RprofundiO)
                     {
-
+                        auxPO = epez[j + 1].RprofundiO;
+                        epez[j + 1].RprofundiO = epez[j].RprofundiO;
+                        epez[j].RprofundiO = auxPO;
+                        auxNS = epez[j + 1].RnivelS;
+                        epez[j + 1].RnivelS = epez[j].RnivelS;
+                        epez[j].RnivelS = auxNS;
+                        auxE = epez[j + 1].Respecie;
+                        epez[j + 1].Respecie = epez[j].Respecie;
+                        epez[j].Respecie = auxE;
                     }
                 }
             }
+            for (int i = 0; i < epez.Length; i++)
+            {
+                Console.WriteLine("El animal " + epez[i].Respecie + " tiene una profundidad optima de " + epez[i].RprofundiO + "m y un nivel de salinidad de " + epez[i].RnivelS);
+            }
+            for (int i = 0; i < epez.Length-1; i++)
+            {
+                if (epez[i].RnivelS > epez[i + 1].RnivelS)
+                {
+                    auxI = i;
+                }
+                else
+                {
+                    auxI = i + 1;
+                }
+            }
+            Console.Write("El animal " + epez[auxI].Respecie + " es que necesita mayor salinidad con " + epez[auxI].RnivelS);
         }
         static void Main(string[] args)
         {
-            
+            HabitadAcuatico ha = new HabitadAcuatico();
+            ha.Ordenar();
             Console.ReadKey();
         }
     }
