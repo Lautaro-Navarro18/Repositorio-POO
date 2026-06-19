@@ -22,7 +22,7 @@ namespace Punto3
         int autoM;
         public SondaExploradora(string modelo, int autoM)
         {
-            Console.WriteLine("La sonda modelo " + modelo + " tiene una autonomia de " + autoM + "min");
+            Console.Write("La sonda modelo " + modelo + " tiene una autonomia de " + autoM + "min");
         }
     }
     public class SondaSubmarina : SondaExploradora
@@ -43,7 +43,6 @@ namespace Punto3
     {
         static void Main(string[] args)
         {
-            SondaExploradora SE = new SondaExploradora("T1000", 10000);
             SondaSubmarina SS = new SondaSubmarina("T1200A", 8000, 500);
             RoverTerrestre RT = new RoverTerrestre("T1200T", 15000, 8);
             Console.ReadKey();
