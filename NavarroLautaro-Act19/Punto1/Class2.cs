@@ -6,9 +6,6 @@ using System.Threading.Tasks;
 
 namespace Punto1
 {
-    /*
-    En el segundo archivo, agregar un método que calcule el total a pagar según la habitación elegida (por ejemplo: Simple = $5000, Doble = $8000, Suite = $12000 por noche).
-    */
     partial class ReservaHotel
     {
         int totalP;
@@ -18,7 +15,7 @@ namespace Punto1
             {
                 totalP = RcantN * 5000;
             }
-            else if(RtipoH == "simple")
+            else if (RtipoH == "simple")
             {
                 totalP = RcantN * 5000;
             }

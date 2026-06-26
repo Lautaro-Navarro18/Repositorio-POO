@@ -6,10 +6,6 @@ using System.Threading.Tasks;
 
 namespace Punto1
 {
-    /*
-    En el primer archivo, definir las propiedades NombreCliente, CantidadNoches y TipoHabitacion (puede ser “Simple”, “Doble” o “Suite”), 
-    validando que la cantidad de noches sea mayor a 0. Estos valores son cargados desde la consola.
-    */
     partial class ReservaHotel
     {
         private string nombreC, tipoH;
@@ -22,7 +18,7 @@ namespace Punto1
             tipoH = Console.ReadLine();
             Console.Write("Ingrese cuantas noches se va a quedar ");
             cantN = int.Parse(Console.ReadLine());
-            while(cantN < 0)
+            while (cantN < 0)
             {
                 Console.Write("La cantidad de noches ingresadas no es valida, por favor ingrese la correcta: ");
                 cantN = int.Parse(Console.ReadLine());

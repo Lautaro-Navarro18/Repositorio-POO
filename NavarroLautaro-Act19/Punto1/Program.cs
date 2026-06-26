@@ -18,7 +18,7 @@ namespace Punto1
         ReservaHotel[] hotel = new ReservaHotel[3];
         public Principal()
         {
-            for(int i = 0; i < hotel.Length; i++)
+            for (int i = 0; i < hotel.Length; i++)
             {
                 hotel[i] = new ReservaHotel();
             }
