@@ -12,15 +12,16 @@ namespace Punto2
     Una empresa de envíos desea registrar sus entregas mediante colaboración de clases.
     Crear una clase Paquete con propiedades: código, peso y destino. Crear una clase Despachador que contenga una lista de paquetes y un método para registrar nuevos paquetes.
     Desde el método Main, instanciar un Despachador, cargar 5 paquetes y mostrar:
-     Todos los paquetes registrados.
-     Cuántos superan los 10 kg de peso.
+     Todos los paquetes registrados.   |
+     Cuántos superan los 10 kg de peso.   |
      Cuántos tienen destino nacional (por ejemplo, “Argentina”).
     */
     public class Paquete
     {
-        int codigo, peso;
-        string destino;
-        public Paquete(int codi, int pe, string dest)
+        protected int codigo;
+        protected float peso;
+        protected string destino;
+        public Paquete(int codi, float pe, string dest)
         {
             codigo = codi;
             peso = pe;
@@ -31,10 +32,10 @@ namespace Punto2
             set { codigo = value; }
             get { return codigo; }
         }
-        public int Rpeso
+        public float Rpeso
         {
             set { peso = value; }
-            get { return peso;}
+            get { return peso; }
         }
         public string Rdest
         {
@@ -44,28 +45,64 @@ namespace Punto2
     }
     internal class Despachador : Paquete
     {
-        List<Despachador> despa = new List<Despachador>();
-        
-        public Despachador(int codi, int pe, string dest) : base(codi, pe, dest)
+        public Despachador(int codi, float pe, string dest) : base(codi, pe, dest)
         {
-            for (int i = 0; i < 2; i++) //CAMBIAR A 5  ===================================================================================================================================
-            {
-                Console.Write("Ingrese el codigo: ");
-                codi = int.Parse(Console.ReadLine());
-                Console.Write("Ingrese el peso: ");
-                pe = int.Parse(Console.ReadLine());
-                Console.Write("Ingrese el destino: ");
-                dest = Console.ReadLine();
-                Despachador newDespa = new Despachador(codi, pe, dest);
-                despa.Add(newDespa);
-            }
+            codigo = codi;
+            peso = pe;
+            destino = dest;
+        }
+        List<Paquete> paquete = new List<Paquete>();
+        public void NuevoP()
+        {
+            Console.Write("Ingrese el codigo: ");
+            codigo = int.Parse(Console.ReadLine());
+            Console.Write("Ingrese el peso: ");
+            peso = float.Parse(Console.ReadLine());
+            Console.Write("Ingrese el destino: ");
+            destino = Console.ReadLine();
+            Paquete newPaque = new Paquete(codigo, peso, destino);
+            paquete.Add(newPaque);
+        
         }
         public void Mostrar()
         {
-
+            foreach (Paquete i in paquete)
+            {
+                Console.WriteLine("El codigo del paquete es: " + i.Rcodigo);
+                Console.WriteLine("El peso del paquete es: " + i.Rpeso);
+                Console.WriteLine("El destino del paquete es: " + i.Rdest);
+            }
+        }
+        public void Supera10kg()
+        {
+            foreach (Paquete i in paquete)
+            {
+                if (i.Rpeso > 10)
+                {
+                    Console.WriteLine("El paquete " + i.Rcodigo + " supera los 10 kg");
+                }
+            }
+        }
+        public void DNacional()
+        {
+            foreach (Paquete i in paquete)
+            {
+                if(i.Rdest == "Argentina")
+                {
+                    Console.WriteLine("El paquete " + i.Rcodigo + " tiene destino nacional (Argentina)");
+                }
+            }
         }
         static void Main(string[] args)
         {
+            Despachador despa = new Despachador(2, 2, "2");
+            for (int i = 0; i < 5; i++)
+            {
+                despa.NuevoP();
+            }
+            despa.Mostrar();
+            despa.Supera10kg();
+            despa.DNacional();
             Console.ReadKey();
         }
     }
