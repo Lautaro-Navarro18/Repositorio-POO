@@ -39,7 +39,6 @@ internal class ClaseGimnasio
     public TimeSpan DuracionC()
     {
         dura = horaF - horaI;
-        Console.WriteLine("La duracion de la clase es: " + dura.Hours + "h " + dura.Minutes + "m");
         return dura;
     }
     static void Main(string[] args)
