@@ -69,6 +69,7 @@ namespace Punto3
             }
             Console.WriteLine("El entrenamiento más largo dura " + auxL.TotalMinutes + " minutos.");
             Console.WriteLine("El entrenamiento más corto dura " + auxC.TotalMinutes + " minutos.");
+            Console.ReadKey();
         }
     }
 }
