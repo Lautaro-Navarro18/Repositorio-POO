@@ -65,6 +65,7 @@ namespace Punto1
                 }
             }
             Console.WriteLine("La clase con mayor duracion es: " + clas[auxI].nombreC + " con " + clas[auxI].dura.Hours + "h y la más temprana es: " + clas[auxi].nombreC + " a las " + clas[auxi].horaI.ToString("HH:mm"));
+            Console.ReadKey();
         }
     }
 }
