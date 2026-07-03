@@ -54,9 +54,9 @@ internal class ClaseGimnasio
         TimeSpan aux2 = clas[0].DuracionC();
         for (int i = 0; i < clas.Length; i++)
         {
-            if (aux2 < clas[i].dura)
+            if (aux2 < clas[i].DuracionC())
             {
-                aux2 = clas[i].dura;
+                aux2 = clas[i].DuracionC();
                 auxI = i;
             }
             if (aux > clas[i].horaI)
@@ -65,7 +65,7 @@ internal class ClaseGimnasio
                 auxi = i;
             }
         }
-        Console.WriteLine("La clase con mayor duracion es: " + clas[auxI].nombreC + " con " + clas[auxI].dura.Hours + "h y la más temprana es: " + clas[auxi].nombreC + " a las " + clas[auxi].horaI.ToString("HH:mm"));
+        Console.WriteLine("La clase con mayor duracion es: " + clas[auxI].nombreC + " con " + clas[auxI].DuracionC().Hours + "h y la más temprana es: " + clas[auxi].nombreC + " a las " + clas[auxi].horaI.ToString("HH:mm"));
         Console.ReadKey();
     }
 }
