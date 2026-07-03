@@ -32,14 +32,13 @@ namespace Punto1
             Console.Write("Ingrese la hora de fin (HH:mm): ");
             horaF = DateTime.ParseExact(Console.ReadLine(), "HH:mm", null);
             this .horaF = horaF;
-            dura = horaF - horaI;
         }
         public ClaseGimnasio() : this("Clase Libre", DateTime.Today.AddHours(8), DateTime.Today.AddHours(9))
         { 
         }
         public void DuracionC()
         {
-            TimeSpan dura = horaF - horaI;
+            dura = horaF - horaI;
             Console.WriteLine("La duracion de la clase es: " + dura.Hours + "h " + dura.Minutes);
         }
         static void Main(string[] args)
