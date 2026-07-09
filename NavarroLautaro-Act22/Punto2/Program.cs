@@ -78,9 +78,9 @@ namespace Punto2
             }
             Console.Clear();
             Console.CursorVisible = false;
-            for (int j = 0; j < elementos.Length; j++)
+            for (int i = 0; i < elementos.Length; i++)
             {
-                elementos[j].Mostrar();
+                elementos[i].Mostrar();
             }
             Console.ReadKey();
         }
