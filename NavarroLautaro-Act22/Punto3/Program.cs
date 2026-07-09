@@ -41,32 +41,31 @@ namespace Punto3
         static void Main(string[] args)
         {
             Entrenamiento[] train = new Entrenamiento[5];
-
             for (int i = 0; i < train.Length; i++)
             {
                 train[i] = new Entrenamiento();
             }
-            TimeSpan mayor = train[0].duracion;
-            int pos = 0;
-            TimeSpan menor = train[0].duracion;
-            for (int j = 0; j < train.Length; j++)
+            TimeSpan auxMa = train[0].duracion;
+            int auxI = 0;
+            TimeSpan auxMe = train[0].duracion;
+            for (int i = 0; i < train.Length; i++)
             {
-                if (menor > train[j].duracion)
+                if (auxMe > train[i].duracion)
                 {
-                    menor = train[j].duracion;
-                    pos = j;
+                    auxMe = train[i].duracion;
+                    auxI = i;
                 }
             }
-            Console.WriteLine("El entrenamiento con menor duracion es de " + menor + " minutos ");
-            for (int k = 0; k < train.Length; k++)
+            Console.WriteLine("El entrenamiento con menor duracion es de " + auxMe + " minutos ");
+            for (int i = 0; i < train.Length; i++)
             {
-                if (train[k].duracion > mayor)
+                if (train[i].duracion > auxMa)
                 {
-                    mayor = train[k].duracion;
-                    pos = k;
+                    auxMa = train[i].duracion;
+                    auxI = i;
                 }
             }
-            Console.WriteLine("El entrenamiento con mayor duracion es de " + mayor + " minutos ");
+            Console.WriteLine("El entrenamiento con mayor duracion es de " + auxMa + " minutos ");
             Console.ReadKey();
         }
     }
