@@ -10,41 +10,79 @@ namespace Punto2
     Actividad 2: Posicionamiento de elementos en consola
     Problema:
     Definir una clase ElementoPantalla con atributos: nombre, posX y posY.
-     Implementar propiedades y un constructor que cargue valores.
-     Crear un método Mostrar() que use Console.SetCursorPosition() para ubicar el nombre en pantalla y Console.CursorVisible para ocultar el cursor.
-     Generar un vector de 4 elementos y mostrarlos en distintas posiciones en la consola. 
+      Implementar propiedades y un constructor que cargue valores.
+      Crear un método Mostrar() que use Console.SetCursorPosition() para ubicar el nombre en pantalla y Console.CursorVisible para ocultar el cursor.
+      Generar un vector de 4 elementos y mostrarlos en distintas posiciones en la consola. 
     */
-    internal class ElementosPantalla
+    internal class ElementoPantalla
     {
-        public string nombre;
-        public int posX, posY;
-        public ElementosPantalla()
+        string nombre;
+        int posX;
+        int posY;
+        public string Nombre
         {
-            Console.Write("Ingrese el nombre del elemento: ");
-            nombre = Console.ReadLine();
-            Console.Write("Ingrese la posicion X del elemento: ");
-            posX = int.Parse(Console.ReadLine());
-            Console.Write("Ingrese la posicion Y del elemento: ");
-            posY = int.Parse(Console.ReadLine());
+            set 
+            {
+                nombre = value;
+            }
+            get 
+            { 
+                return nombre; 
+            }
+        }
+        public int PosX
+        {
+            set 
+            { 
+                posX = value; 
+            }
+            get 
+            { 
+                return posX; 
+            }
+        }
+        public int PosY
+        {
+            set 
+            { 
+                posY = value; 
+            }
+            get 
+            { 
+                return posY; 
+            }
+        }
+        public ElementoPantalla(string nombre, int x, int y)
+        {
+            Nombre = nombre;
+            PosX = x;
+            PosY = y;
         }
         public void Mostrar()
         {
-            Console.SetCursorPosition(posX, posY);
-            Console.CursorVisible = false;
-            Console.WriteLine(nombre);
+            Console.SetCursorPosition(PosX, PosY);
+            Console.WriteLine(Nombre);
         }
         static void Main(string[] args)
         {
-            ElementosPantalla[] ele = new ElementosPantalla[4];
-            int f = 0;
-            for (int i = 0; i < ele.Length; i++)
+            ElementoPantalla[] elementos = new ElementoPantalla[4];
+            for (int i = 0; i < elementos.Length; i++)
             {
-                Console.SetCursorPosition(0, f);
-                ele[i] = new ElementosPantalla();
-                ele[i].Mostrar();
-                f += 3;
+                Console.Write("Inserta el nombre: ");
+                string nombre = Console.ReadLine();
+                Console.Write("Inserta la coordenada X: ");
+                int x = int.Parse(Console.ReadLine());
+                Console.Write("Inserta la coordenada Y: ");
+                int y = int.Parse(Console.ReadLine());
+                elementos[i] = new ElementoPantalla(nombre, x, y);
             }
-            Console.ReadLine();
+            Console.Clear();
+            Console.CursorVisible = false;
+            for (int j = 0; j < elementos.Length; j++)
+            {
+                elementos[j].Mostrar();
+            }
+            Console.ReadKey();
         }
     }
 }
