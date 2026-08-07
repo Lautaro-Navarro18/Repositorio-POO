@@ -33,26 +33,31 @@ namespace Punto1
         List<Documento> docu = new List<Documento>();
         public void AgregarDocumento()
         {
-            Console.Write("Ingrese el nombre del archivo ");
+            for (int i = 0; i < 4; i++)
+            {
+                Console.Write("Ingrese el nombre del archivo ");
             string nombreA = Console.ReadLine();
             Console.Write("Ingrese la cantidad de paginas ");
             int cantPag = int.Parse(Console.ReadLine());
             Documento newD = new Documento(nombreA, cantPag);
             docu.Add(newD);
+            }
+            
         }
         public void ImprimirSiguiente()
         {
             if(docu.Count > 0)
             {
-                Console.WriteLine("--------------------");
+                Console.WriteLine("====================");
                 Console.WriteLine(docu[0].nombreA);
                 Console.WriteLine(docu[0].cantPag);
-                Console.WriteLine("--------------------");
+                Console.WriteLine("====================");
                 docu.RemoveAt(0);
             } else { Console.WriteLine("Bien ahí, no hay laburo pendiente"); }
         }
         public void MostrarColaPendiente()
         {
+            int auxCD = 0;
             foreach (var i in docu)
             {
                 Console.WriteLine("--------------------");
@@ -60,20 +65,19 @@ namespace Punto1
                 Console.WriteLine(i.cantPag);
                 Console.WriteLine("--------------------");
             }
+            for (int i = 0; i < docu.Count; i++)
+            {
+                auxCD += docu[i].cantPag;
+            }
+            Console.WriteLine("Quedan " +  auxCD + " paginas por completar");
         }
-    }
-    internal class Program
-    {
         static void Main(string[] args)
         {
             ServidorImpresion SI = new ServidorImpresion();
-            for (int i = 0; i < 4; i++)
-            {
-                SI.AgregarDocumento();
-            }
+            SI.AgregarDocumento();
             SI.ImprimirSiguiente();
             SI.MostrarColaPendiente();
             Console.ReadKey();
         }
     }
-}
+} // piola para entregar
