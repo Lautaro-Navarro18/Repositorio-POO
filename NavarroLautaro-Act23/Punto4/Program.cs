@@ -12,20 +12,23 @@ namespace Punto4
          y un constructor que reciba nom y watts.
         Crear la clase colaboradora PanelDomotico que administre un objeto List<DispositivoInteligente>.
         Métodos en PanelDomotico:
-          1. Un constructor que permita al usuario cargar dinámicamente dispositivos por teclado. El sistema preguntará después de cada carga si se desea agregar otro dispositivo.
-          2. MostrarDispositivos(): Listar todos los dispositivos configurados junto a sus consumos.
-          3. CalcularConsumoTotal(): Calcular y mostrar en pantalla los Watts totales que consume la casa sumando los valores de la lista.
-          4. DesconectarDispositivo(): Solicitar al usuario el nombre de un dispositivo y, si existe en la lista, removerlo de forma dinámica para simular su apagado remoto. 
+         1. Un constructor que permita al usuario cargar dinámicamente dispositivos por teclado. El sistema preguntará después de cada carga si se desea agregar otro dispositivo.
+         2. MostrarDispositivos(): Listar todos los dispositivos configurados junto a sus consumos.
+         3. CalcularConsumoTotal(): Calcular y mostrar en pantalla los Watts totales que consume la casa sumando los valores de la lista.
+         4. DesconectarDispositivo(): Solicitar al usuario el nombre de un dispositivo y, si existe en la lista, removerlo de forma dinámica para simular su apagado remoto. 
     */
     public class DispositivoInteligente
     {
-        public string nombreDisposi;
-        public double consumoWs;
-        public DispositivoInteligente(string nombreDisposi, double consumoWs)
+        private string nombreDispositivo;
+        private double consumoWatts;
+
+        public DispositivoInteligente(string nom, double watts)
         {
-            this.nombreDisposi = nombreDisposi;
-            this.consumoWs = consumoWs;
+            nombreDispositivo = nom;
+            consumoWatts = watts;
         }
+        public string NombreDispositivo { get { return nombreDispositivo; } }
+        public double ConsumoWatts { get { return consumoWatts; } }
     }
     public class PanelDomotico
     {
@@ -55,8 +58,8 @@ namespace Punto4
             foreach (var i in dispoInte)
             {
                 Console.WriteLine("-------------------------");
-                Console.WriteLine("Nombre: " + i.nombreDisposi);
-                Console.WriteLine("Consumo en Watts " + i.consumoWs);
+                Console.WriteLine("Nombre: " + i.NombreDispositivo);
+                Console.WriteLine("Consumo en Watts " + i.ConsumoWatts);
                 Console.WriteLine("-------------------------");
             }
         }
@@ -65,7 +68,7 @@ namespace Punto4
             double auxW = 0;
             for (int i = 0; i < dispoInte.Count; i++)
             {
-                auxW += dispoInte[i].consumoWs;
+                auxW += dispoInte[i].ConsumoWatts;
             }
             Console.WriteLine("El consumo total de la vivienda es de: " + auxW);
         }
@@ -73,7 +76,7 @@ namespace Punto4
         {
             Console.WriteLine("Ingrese el dispositivo que se quiere apagar: ");
             string auxN = Console.ReadLine();
-            dispoInte.RemoveAll(i => i.nombreDisposi == auxN);
+            dispoInte.RemoveAll(i => i.NombreDispositivo == auxN);
             MostrarDispositivos();
             CalcularConsumoTotal();
         }
@@ -89,4 +92,4 @@ namespace Punto4
             Console.ReadKey();
         }
     }
-}
+} //ta listo pa la entrega
