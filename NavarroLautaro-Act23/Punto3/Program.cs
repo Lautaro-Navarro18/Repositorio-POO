@@ -19,7 +19,8 @@ namespace Punto3
     */
     public class MonitoreoCostero
     {
-        List<string> especiesDetectadas = new List<string>();
+        private List<string> especiesDetectadas = new List<string>();
+
         public void CargarAvistamientos()
         {
             bool auxF = true;
