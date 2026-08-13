@@ -19,14 +19,15 @@ namespace Punto1
     */
     public class Documento
     {
-        public string nombreA;
-        public int cantPag;
-        public Documento(string nombreA, int cantPag)
+        private string nombreArchivo;
+        private int cantidadPaginas;
+        public Documento(string nom, int pag)
         {
-
-            this.nombreA = nombreA;
-            this.cantPag = cantPag;
+            nombreArchivo = nom;
+            cantidadPaginas = pag;
         }
+        public string NombreArchivo { get { return nombreArchivo; } }
+        public int CantidadPaginas { get { return cantidadPaginas; } }
     }
     public class ServidorImpresion
     {
@@ -36,24 +37,25 @@ namespace Punto1
             for (int i = 0; i < 4; i++)
             {
                 Console.Write("Ingrese el nombre del archivo ");
-            string nombreA = Console.ReadLine();
-            Console.Write("Ingrese la cantidad de paginas ");
-            int cantPag = int.Parse(Console.ReadLine());
-            Documento newD = new Documento(nombreA, cantPag);
-            docu.Add(newD);
+                string nombreA = Console.ReadLine();
+                Console.Write("Ingrese la cantidad de paginas ");
+                int cantPag = int.Parse(Console.ReadLine());
+                Documento newD = new Documento(nombreA, cantPag);
+                docu.Add(newD);
             }
-            
+
         }
         public void ImprimirSiguiente()
         {
-            if(docu.Count > 0)
+            if (docu.Count > 0)
             {
                 Console.WriteLine("====================");
-                Console.WriteLine(docu[0].nombreA);
-                Console.WriteLine(docu[0].cantPag);
+                Console.WriteLine(docu[0].NombreArchivo);
+                Console.WriteLine(docu[0].CantidadPaginas);
                 Console.WriteLine("====================");
                 docu.RemoveAt(0);
-            } else { Console.WriteLine("Bien ahí, no hay laburo pendiente"); }
+            }
+            else { Console.WriteLine("Bien ahí, no hay laburo pendiente"); }
         }
         public void MostrarColaPendiente()
         {
@@ -61,15 +63,15 @@ namespace Punto1
             foreach (var i in docu)
             {
                 Console.WriteLine("--------------------");
-                Console.WriteLine(i.nombreA);
-                Console.WriteLine(i.cantPag);
+                Console.WriteLine(i.NombreArchivo);
+                Console.WriteLine(i.CantidadPaginas);
                 Console.WriteLine("--------------------");
             }
             for (int i = 0; i < docu.Count; i++)
             {
-                auxCD += docu[i].cantPag;
+                auxCD += docu[i].CantidadPaginas;
             }
-            Console.WriteLine("Quedan " +  auxCD + " paginas por completar");
+            Console.WriteLine("Quedan " + auxCD + " paginas por completar");
         }
         static void Main(string[] args)
         {
