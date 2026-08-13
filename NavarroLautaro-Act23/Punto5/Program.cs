@@ -11,20 +11,22 @@ namespace Punto5
         Crear la clase Vehiculo que contenga como atributos privados: patente (string) y costoReparacion (double). Definir sus propiedades correspondientes y un constructor que reciba pat y costo. 
         Crear la clase GestionTaller que administre una lista de objetos List.
         Métodos en GestionTaller:
-        o IngresarVehiculo(): Solicitar por teclado la patente y el costo de reparación de un vehículo para agregarlo a la lista mediante .Add().
-        o BuscarVehiculo(): Pedir al operador que ingrese una patente y, recorriendo la lista, informar si el vehículo está en el taller y mostrar su costo asociado.
-        o EntregarVehiculo(): Solicitar una patente por teclado, buscar el vehículo en la lista y, si existe, removerlo de la colección mediante .Remove() confirmando la entrega del automóvil.
-        o CalcularRecaudacionPendiente(): Listar los vehículos actualmente en reparación, la cantidad total de unidades alojadas en el taller mediante la propiedad .Count y la suma total acumulada por cobrar. 
+         o IngresarVehiculo(): Solicitar por teclado la patente y el costo de reparación de un vehículo para agregarlo a la lista mediante .Add().
+         o BuscarVehiculo(): Pedir al operador que ingrese una patente y, recorriendo la lista, informar si el vehículo está en el taller y mostrar su costo asociado.
+         o EntregarVehiculo(): Solicitar una patente por teclado, buscar el vehículo en la lista y, si existe, removerlo de la colección mediante .Remove() confirmando la entrega del automóvil.
+         o CalcularRecaudacionPendiente(): Listar los vehículos actualmente en reparación, la cantidad total de unidades alojadas en el taller mediante la propiedad .Count y la suma total acumulada por cobrar. 
     */
     public class Vehiculo
     {
-        public string patente;
-        public double costoReparacion;
-        public Vehiculo(string patente, double costoReparacion)
+        private string patente;
+        private double costoReparacion;
+        public Vehiculo(string pat, double costo)
         {
-            this.patente = patente;
-            this.costoReparacion = costoReparacion;
+            patente = pat;
+            costoReparacion = costo;
         }
+        public string Patente { get { return patente; } }
+        public double CostoReparacion { get { return costoReparacion; } }
     }
     public class GestionTaller
     {
@@ -55,9 +57,9 @@ namespace Punto5
             string auxN = Console.ReadLine();
             foreach (var vehiculo in vehiculos)
             {
-                if(vehiculo.patente == auxN)
+                if(vehiculo.Patente == auxN)
                 {
-                    Console.WriteLine("El vehiculo se encuentra en el taller y su costo de reparacion es: " + vehiculo.costoReparacion);
+                    Console.WriteLine("El vehiculo se encuentra en el taller y su costo de reparacion es: " + vehiculo.CostoReparacion);
                 }
             }
             Console.WriteLine();
@@ -66,13 +68,13 @@ namespace Punto5
         {
             Console.WriteLine("Ingrese la patente del vehiculo que se quiere entregar: ");
             string auxN = Console.ReadLine();
-            vehiculos.RemoveAll(i => i.patente == auxN);
+            vehiculos.RemoveAll(i => i.Patente == auxN);
             Console.WriteLine();
         }
         public void CalcularRecaudacionPendiente()
         {
             Console.WriteLine("La cantidad de vehiculos en el taller es: " + vehiculos.Count);
-            Console.Write("La recaudacion pendiente es: " + vehiculos.Sum(i => i.costoReparacion));
+            Console.Write("La recaudacion pendiente es: " + vehiculos.Sum(i => i.CostoReparacion));
         }
     }
     internal class Program
@@ -86,4 +88,4 @@ namespace Punto5
             GT.CalcularRecaudacionPendiente();
         }
     }
-}
+} //listo
