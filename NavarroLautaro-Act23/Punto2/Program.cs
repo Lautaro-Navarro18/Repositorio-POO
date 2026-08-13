@@ -20,13 +20,15 @@ namespace Punto2
     */
     public class Dron
     {
-        public string codigo;
-        public int nivelBate;
-        public Dron(string codigo, int nivelBate)
+        private string codigo;
+        private int nivelBateria;
+        public Dron(string cod, int bat)
         {
-            this.codigo = codigo;
-            this.nivelBate = nivelBate;
+            codigo = cod;
+            nivelBateria = bat;
         }
+        public string Codigo { get { return codigo; } }
+        public int NivelBateria { get { return nivelBateria; } }
     }
     public class CentroControl
     {
@@ -57,14 +59,14 @@ namespace Punto2
             foreach (var i in dron)
             {
                 Console.WriteLine("<===========================>");
-                Console.WriteLine("DRON: " + i.codigo);
-                Console.WriteLine("PORCENTAJE DE BATERIA: " + i.nivelBate);
+                Console.WriteLine("DRON: " + i.Codigo);
+                Console.WriteLine("PORCENTAJE DE BATERIA: " + i.NivelBateria);
                 Console.WriteLine("<===========================>");
             }
         }
         public void RemoverDronesBajos()
         {
-            dron.RemoveAll(i => i.nivelBate <= 15);
+            dron.RemoveAll(i => i.NivelBateria <= 15);
             Console.WriteLine("Se mandaron a mantenimiento aquellos drones que tenian 15 o menos bateria");
         }
         public void MostrarDronesRestantes()
@@ -74,8 +76,8 @@ namespace Punto2
             foreach (var i in dron)
             {
                 Console.WriteLine("<===========================>");
-                Console.WriteLine("DRON: " + i.codigo);
-                Console.WriteLine("PORCENTAJE DE BATERIA: " + i.nivelBate);
+                Console.WriteLine("DRON: " + i.Codigo);
+                Console.WriteLine("PORCENTAJE DE BATERIA: " + i.NivelBateria);
                 Console.WriteLine("<===========================>");
             }
             active = dron.Count;
@@ -93,4 +95,5 @@ namespace Punto2
             Console.ReadKey();
         }
     }
+}  //ta piola para entregar
 }  //ta piola para entregar
