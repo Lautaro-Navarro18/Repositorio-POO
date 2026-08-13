@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,7 +21,7 @@ namespace Punto4
     {
         public string nombreDisposi;
         public double consumoWs;
-        public DispositivoInteligente(string nombreDisposi,  double consumoWs)
+        public DispositivoInteligente(string nombreDisposi, double consumoWs)
         {
             this.nombreDisposi = nombreDisposi;
             this.consumoWs = consumoWs;
@@ -51,6 +51,7 @@ namespace Punto4
         }
         public void MostrarDispositivos()
         {
+            Console.Clear();
             foreach (var i in dispoInte)
             {
                 Console.WriteLine("-------------------------");
@@ -73,6 +74,8 @@ namespace Punto4
             Console.WriteLine("Ingrese el dispositivo que se quiere apagar: ");
             string auxN = Console.ReadLine();
             dispoInte.RemoveAll(i => i.nombreDisposi == auxN);
+            MostrarDispositivos();
+            CalcularConsumoTotal();
         }
     }
     internal class Program
@@ -81,6 +84,8 @@ namespace Punto4
         {
             PanelDomotico PD = new PanelDomotico();
             PD.MostrarDispositivos();
+            PD.CalcularConsumoTotal();
+            PD.DesconectarDispositivo();
             Console.ReadKey();
         }
     }
