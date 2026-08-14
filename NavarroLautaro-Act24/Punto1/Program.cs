@@ -33,7 +33,7 @@ namespace Punto1
         List<Plato> platos = new List<Plato>();
         public void AgregarPlato()
         {
-            Console.Write("¿Desea encargar algun plato?");
+            Console.Write("¿Desea encargar algun plato? ");
             string aux = Console.ReadLine();
             if(aux == "SI" || aux == "Si" || aux == "si")
             {
@@ -48,12 +48,18 @@ namespace Punto1
                     platos.Add(newPlato);
                     Console.Write("¿Quiere ingresar otro plato? ");
                     string auxN = Console.ReadLine();
-                    if (auxN == "NO" || auxN == "No" || auxN == "no")
+                    if (auxN == "SI" || auxN == "Si" || auxN == "si")
                     {
-                        auxM = false;
+                        continue;
+                        
+                    }else if(auxN == "NO" || auxN == "No" || auxN == "no")
+                    {
+                        break;
                     }
+                    auxM = false;
                 }
-            }else if (aux == "NO" || aux == "No" || aux == "no")
+            }
+            else if (aux == "NO" || aux == "No" || aux == "no")
             {
                 Console.WriteLine("¡Vuelva pronto! (y con ganas de comprar)");
             }
@@ -76,6 +82,8 @@ namespace Punto1
             Console.Write("¿Que plato desea cancelar? ");
             string auxP = Console.ReadLine();
             platos.RemoveAll(i => i.Nombre == auxP);
+            MostrarComanda();
+            CalcularTotalMesa();
         }
     }
     internal class Program
