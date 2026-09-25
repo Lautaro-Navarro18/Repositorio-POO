@@ -1,0 +1,10 @@
+C:\Users\Alumno\source\repos\NavarroLautaroAct29rs\Punto4\obj\Debug\Punto4.csproj.AssemblyReference.cache
+C:\Users\Alumno\source\repos\NavarroLautaroAct29rs\Punto4\obj\Debug\Punto4.Form1.resources
+C:\Users\Alumno\source\repos\NavarroLautaroAct29rs\Punto4\obj\Debug\Punto4.Properties.Resources.resources
+C:\Users\Alumno\source\repos\NavarroLautaroAct29rs\Punto4\obj\Debug\Punto4.csproj.GenerateResource.cache
+C:\Users\Alumno\source\repos\NavarroLautaroAct29rs\Punto4\obj\Debug\Punto4.csproj.CoreCompileInputs.cache
+C:\Users\Alumno\source\repos\NavarroLautaroAct29rs\Punto4\bin\Debug\Punto4.exe.config
+C:\Users\Alumno\source\repos\NavarroLautaroAct29rs\Punto4\bin\Debug\Punto4.exe
+C:\Users\Alumno\source\repos\NavarroLautaroAct29rs\Punto4\bin\Debug\Punto4.pdb
+C:\Users\Alumno\source\repos\NavarroLautaroAct29rs\Punto4\obj\Debug\Punto4.exe
+C:\Users\Alumno\source\repos\NavarroLautaroAct29rs\Punto4\obj\Debug\Punto4.pdb
